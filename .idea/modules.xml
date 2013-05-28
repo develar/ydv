@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/chrome-app/chrome-app.iml" filepath="$PROJECT_DIR$/chrome-app/chrome-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/importer/importer.iml" filepath="$PROJECT_DIR$/importer/importer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ydv.iml" filepath="$PROJECT_DIR$/ydv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youtrack-rest/youtrack-rest.iml" filepath="$PROJECT_DIR$/youtrack-rest/youtrack-rest.iml" />
+    </modules>
+  </component>
+</project>
+

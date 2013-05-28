@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="chrome-app">
+    <output-path>$PROJECT_DIR$/chrome-app/kotlin-out</output-path>
+    <root id="root">
+      <element id="k2js-compiler-output" name="importer" />
+      <element id="k2js-compiler-output" name="youtrack-rest" />
+    </root>
+  </artifact>
+</component>
