@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YDV Importer test</title>
+  <script>
+    var importerWorker = new Worker("kotlin-out/importer.js")
+    importerWorker.postMessage("import")
+  </script>
+</head>
+</html>
