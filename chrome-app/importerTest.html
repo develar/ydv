@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8"/>
   <title>YDV Importer test</title>
-  <script>
-    var importerWorker = new Worker("kotlin-out/importer.js")
-    importerWorker.postMessage("import")
-  </script>
+  <script src="pass.js"></script>
+  <script src="kotlin-es5.js"></script>
 </head>
+<body>
+<script>
+  var importerWorker = new Worker("kotlin-out/importer.js")
+  importerWorker.postMessage({host: "http://youtrack.jetbrains.com", login: yl, password: yp})
+</script>
+</body>
 </html>
