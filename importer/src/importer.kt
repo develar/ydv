@@ -24,5 +24,10 @@ fun main(args:Array<String>) {
     if (youtrack.connect(data.host, data.login, data.password)) {
       postMessage("connected")
     }
+    importIssues(youtrack)
   }
+}
+
+private fun importIssues(youtrack:Youtrack) {
+  val issues = youtrack.getIssues("for: me")
 }

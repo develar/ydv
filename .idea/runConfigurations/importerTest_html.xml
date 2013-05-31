@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="importerTest.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" uri="http://localhost:8081/ydv/importerTest.html">
+  <configuration default="false" name="importerTest.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" uri="http://localhost:8080/ydv/importerTest.html">
     <RunnerSettings RunnerId="JavascriptDebugRunner" />
     <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
     <method />

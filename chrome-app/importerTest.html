@@ -8,7 +8,7 @@
 </head>
 <body>
 <script>
-  var importerWorker = new Worker("kotlin-out/importer.js")
+  var importerWorker = new Worker("importer-wrapper.js")
   importerWorker.postMessage({host: "http://youtrack.jetbrains.com", login: yl, password: yp})
 </script>
 </body>
