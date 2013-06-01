@@ -248,6 +248,24 @@ public native trait DeclarativeWebRequest {
 }
 
 public native trait Chrome {
+  public trait Cookies {
+    public trait Cookie {
+      public val name:String
+      public val value:String
+      public val domain:String
+      public val path:String
+      public val secure:Boolean
+      public val httpOnly:Boolean
+      public val hostOnly:Boolean
+      public val session:Boolean
+      public val expirationDate:Double
+      public val storeId:String
+    }
+
+    public fun get(query:Any, callback:(cookie:Cookie)->Unit):Unit
+    public fun getAll(query:Any, callback:(cookies:Array<Cookie>)->Unit):Unit
+  }
+
   public val debugger:Debugger
   public val tabs:Tabs
   public val windows:Windows
@@ -258,6 +276,7 @@ public native trait Chrome {
   public val browserAction:BrowserAction
   public val webRequest:WebRequest
   public val declarativeWebRequest:DeclarativeWebRequest
+  public val cookies:Cookies
 }
 
 public native val chrome:Chrome = noImpl

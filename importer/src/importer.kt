@@ -25,10 +25,10 @@ fun main(args:Array<String>) {
 }
 
 private fun init(data:ImportMessage) {
-  login(data.host, data.login, data.password, { postMessage("cannot connect: " + it) }) {
-    postMessage("connected")
-    importIssues(it)
-  }
+  //login(data.host, data.login, data.password, { postMessage("cannot connect: " + it) }) {
+  //  postMessage("connected")
+    importIssues(Youtrack(data.host))
+  //}
 }
 
 private fun importIssues(youtrack:Youtrack) {

@@ -12,6 +12,7 @@ import java.util.ArrayList
 import chrome.WebRequest.CompletedDetails
 import chrome.WebRequest.ErrorDetails
 import chrome.App.Runtime.LaunchData
+import chrome.Chrome.Cookies.Cookie
 
 private val LOG = getLogger("org.jetbrains.chrome")
 
@@ -139,4 +140,8 @@ public fun App.Runtime.launched(disposable:Disposable? = null, listener:(data:La
 
 public fun focusWindow(id:Int) {
   chrome.windows.update(id, dto("focused", true))
+}
+
+public fun Chrome.Cookies.getAll(name:String? = null, callback:(cookies:Array<Cookie>)->Unit) {
+  chrome.cookies.getAll(dto<Any>(), callback)
 }

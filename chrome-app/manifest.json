@@ -2,13 +2,14 @@
   "name": "Youtrack Personal View",
   "description": "Youtrack Personal View",
   "version": "0.1",
+  "manifest_version": 2,
   "app": {
     "background": {
       "scripts": [
         "kotlin-es5.js",
         "kotlin-out/browser-ext-platform.js",
         "kotlin-out/chrome-ext-api.js",
-        "kotlin-out/main.js"
+        "kotlin-out/background.js"
       ]
     }
   },

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/background/background.iml" filepath="$PROJECT_DIR$/background/background.iml" />
       <module fileurl="file://$PROJECT_DIR$/platform/browser-ext-platform.iml" filepath="$PROJECT_DIR$/platform/browser-ext-platform.iml" />
       <module fileurl="file://$PROJECT_DIR$/chrome-app/chrome-app.iml" filepath="$PROJECT_DIR$/chrome-app/chrome-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/chrome-ext-api/chrome-ext-api.iml" filepath="$PROJECT_DIR$/chrome-ext-api/chrome-ext-api.iml" />
