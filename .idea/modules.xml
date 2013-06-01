@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/platform/browser-ext-platform.iml" filepath="$PROJECT_DIR$/platform/browser-ext-platform.iml" />
       <module fileurl="file://$PROJECT_DIR$/chrome-app/chrome-app.iml" filepath="$PROJECT_DIR$/chrome-app/chrome-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chrome-ext-api/chrome-ext-api.iml" filepath="$PROJECT_DIR$/chrome-ext-api/chrome-ext-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/importer/importer.iml" filepath="$PROJECT_DIR$/importer/importer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/main/main.iml" filepath="$PROJECT_DIR$/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/ydv.iml" filepath="$PROJECT_DIR$/ydv.iml" />
       <module fileurl="file://$PROJECT_DIR$/youtrack-rest/youtrack-rest.iml" filepath="$PROJECT_DIR$/youtrack-rest/youtrack-rest.iml" />
     </modules>

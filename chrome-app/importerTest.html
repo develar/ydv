@@ -5,11 +5,22 @@
   <title>YDV Importer test</title>
   <script src="pass.js"></script>
   <script src="kotlin-es5.js"></script>
+  <script src="kotlin-out/youtrack-rest.js"></script>
+  <script src="kotlin-out/importer.js"></script>
 </head>
 <body>
 <script>
-  var importerWorker = new Worker("importer-wrapper.js")
-  importerWorker.postMessage({host: "http://youtrack.jetbrains.com", login: yl, password: yp})
+  //var importerWorker = new Worker("importer-wrapper.js")
+
+  function importIssues(yl, yp) {
+    var message = {host: "http://scrumboard.myjetbrains.com/youtrack", login: yl, password: yp};
+    //importerWorker.postMessage(message)
+    //importerWorker.onmessage = function (event) {
+    //  console.log(event.data);
+    //};
+    Kotlin.modules["importer"].org_jetbrains_ydv.init(message)
+  }
 </script>
+<button onclick="importIssues(yl, yp)">Import issues</button>
 </body>
 </html>

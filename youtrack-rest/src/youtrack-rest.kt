@@ -2,31 +2,40 @@ package org.jetbrains.youtrackRest
 
 import html.XMLHttpRequest
 
-public class Youtrack {
-  //private var cookie:String? = null
-  private var host:String? = null
-
-  public fun connect(host:String, login:String, password:String):Boolean {
-    val request = XMLHttpRequest()
-    request.open("POST", "$host/rest/user/login?login=$login&password=$password", false)
-    request.setRequestHeader("Accept", "application/json")
-    request.send()
-    if (request.status != 200) {
-      return false
+public fun login(host:String, login:String, password:String, errorCallback:((statusText:String)->Unit)? = null, callback:(youtrack:Youtrack)->Unit) {
+  val request = XMLHttpRequest()
+  request.open("POST", "$host/rest/user/login?login=$login&password=$password")
+  request.setRequestHeader("Accept", "application/json")
+  request.onreadystatechange = {
+    if (request.readyState == XMLHttpRequest.DONE) {
+      if (request.status == 200) {
+        callback(Youtrack(host))
+      }
+      else {
+        errorCallback?.invoke(request.statusText)
+      }
     }
-
-    //cookie = request.getResponseHeader("Set-Cookie")
-    this.host = host
-    return true
   }
+  request.send()
+}
 
-  public fun getIssues(query:String):Any {
+public class Youtrack(private val host:String) {
+  public fun getIssues(query:String, errorCallback:((statusText:String)->Unit)? = null, callback:(data:Any)->Unit):Unit {
     val request = XMLHttpRequest()
-    request.open("GET", "$host/rest/issue?filter=$query", false)
+    request.open("GET", "$host/rest/issue?filter=$query")
     request.setRequestHeader("Accept", "application/json")
     //request.setRequestHeader("Cookie", cookie!!)
     request.withCredentials = true
+    request.onreadystatechange = {
+      if (request.readyState == XMLHttpRequest.DONE) {
+        if (request.status == 200) {
+          callback(request.response!!)
+        }
+        else {
+          errorCallback?.invoke(request.statusText)
+        }
+      }
+    }
     request.send()
-    return request.response!!
   }
 }

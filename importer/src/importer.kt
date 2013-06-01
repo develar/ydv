@@ -1,6 +1,7 @@
-package org.jetbrains.ydv
+package org.jetbrains.ydv.import
 
 import org.jetbrains.youtrackRest.Youtrack
+import org.jetbrains.youtrackRest.login
 
 public native trait MessageEvent {
   val data:Any
@@ -19,15 +20,19 @@ public native fun importScripts(path:String):Unit = noImpl
 
 fun main(args:Array<String>) {
   onmessage = {
-    val data = it.data as ImportMessage
-    val youtrack = Youtrack()
-    if (youtrack.connect(data.host, data.login, data.password)) {
-      postMessage("connected")
-    }
-    importIssues(youtrack)
+    init(it.data as ImportMessage)
+  }
+}
+
+private fun init(data:ImportMessage) {
+  login(data.host, data.login, data.password, { postMessage("cannot connect: " + it) }) {
+    postMessage("connected")
+    importIssues(it)
   }
 }
 
 private fun importIssues(youtrack:Youtrack) {
-  val issues = youtrack.getIssues("for: me")
+  youtrack.getIssues("for: me", { postMessage(it) }) {
+    postMessage(it)
+  }
 }
