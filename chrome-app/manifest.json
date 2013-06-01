@@ -4,7 +4,13 @@
   "version": "0.1",
   "app": {
     "background": {
-      "scripts": ["main.js"]
+      "scripts": [
+        "kotlin-es5.js",
+        "kotlin-out/browser-ext-platform.js",
+        "kotlin-out/chrome-ext-api.js",
+        "kotlin-out/main.js"
+      ]
     }
-  }
+  },
+  "permissions": ["http://*/rest/*", "https://*/rest/*"]
 }

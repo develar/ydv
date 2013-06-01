@@ -5,6 +5,8 @@
       <element id="k2js-compiler-output" name="importer" />
       <element id="k2js-compiler-output" name="youtrack-rest" />
       <element id="k2js-compiler-output" name="main" />
+      <element id="k2js-compiler-output" name="chrome-ext-api" />
+      <element id="k2js-compiler-output" name="browser-ext-platform" />
     </root>
   </artifact>
 </component>

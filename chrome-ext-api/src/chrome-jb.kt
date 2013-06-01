@@ -133,7 +133,7 @@ public fun httpHeader(name:String, value:String):HttpHeader = dto("name", name, 
 public fun asResponseHeaders(result:Array<HttpHeader>):Any = dto("responseHeaders", result)
 public fun asResponseHeaders(result:ArrayList<HttpHeader>):Any = dto("responseHeaders", result)
 
-public fun App.Runtime.launched(disposable:Disposable? = null, listener:(details:LaunchData)->Unit) {
+public fun App.Runtime.launched(disposable:Disposable? = null, listener:(data:LaunchData? = null)->Unit) {
   addListener(onLaunched, listener, disposable)
 }
 

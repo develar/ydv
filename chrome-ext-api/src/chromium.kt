@@ -135,17 +135,28 @@ public native trait Extension {
 }
 
 public native trait App {
+  // http://developer.chrome.com/trunk/apps/app.runtime.html
   public native trait Runtime {
     public native trait LaunchData {
       public val id:String?
       public val items:Array<Any>?
     }
 
-    public val onLaunched:ChromeEvent<(data:LaunchData)->Unit>
+    // http://developer.chrome.com/apps/app.window.html
+    public native trait WindowApi {
+      public native trait AppWindow {
+        public val contentWindow:Any
+      }
+
+      public fun create(url:String, options:Any? = null, callback:((window:AppWindow)->Unit)? = null)
+    }
+
+    public val onLaunched:ChromeEvent<(data:LaunchData? = null)->Unit>
   }
 
   public fun getDetails():AppDetails
   public val runtime:Runtime
+  public val window:Runtime.WindowApi
 }
 
 public native trait AppDetails {
