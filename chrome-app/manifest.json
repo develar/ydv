@@ -13,5 +13,5 @@
       ]
     }
   },
-  "permissions": ["http://*/rest/*", "https://*/rest/*"]
+  "permissions": ["http://*/rest/*", "https://*/rest/*", "storage"]
 }

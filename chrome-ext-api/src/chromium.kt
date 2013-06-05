@@ -173,7 +173,8 @@ public native trait Storage {
 }
 
 public native trait StorageArea {
-  fun get<T>(key:String?, callback:(data:T)->Unit):Unit
+  native("get")
+  fun _get<T>(key:String?, callback:(data:T)->Unit):Unit
 
   public fun set(items:Any, callback:(()->Unit)? = null):Unit
 }

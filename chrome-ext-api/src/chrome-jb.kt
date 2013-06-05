@@ -33,7 +33,7 @@ public enumerable class Debuggee (public val tabId:Int) {
 private native fun isObjectEmpty(o:Any) = noImpl
 
 public fun StorageArea.get<T : Any>(key:String? = null, callback:(data:T?)->Unit) {
-  this.get<T>(key) {
+  _get<T>(key) {
     callback(if (!successfully() || isObjectEmpty(it)) null else it)
   }
 }
